@@ -32,9 +32,6 @@
   </dependencies>
 
   <build>
-    <!-- prevent maven from building module -->
-    <sourceDirectory>source</sourceDirectory>
-    <testSourceDirectory>test</testSourceDirectory>
     <plugins>
       <plugin>
         <groupId>org.thingsboard</groupId>
@@ -53,13 +50,16 @@
         </configuration>
         <executions>
           <execution>
-            <phase>install</phase>
             <goals>
               <goal>invoke</goal>
             </goals>
+            <phase>install</phase>
           </execution>
         </executions>
       </plugin>
     </plugins>
+    <!-- prevent maven from building module -->
+    <sourceDirectory>source</sourceDirectory>
+    <testSourceDirectory>test</testSourceDirectory>
   </build>
 </project>
